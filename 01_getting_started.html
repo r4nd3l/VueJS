@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- DevCorner - Favicon -->
+  <link rel="shortcut icon" href="img/favicon.svg"/>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico"/>
+
+  <!-- VueJS v2.05 -->
+  <script src="js/vue.js" charset="utf-8"></script>
+
+  <title>VueJs</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-on:input="changeTitle">
+    <p>{{ title }}</p>
+  </div>
+
+  <!-- CustomJS -->
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        title: 'Hello World!'
+      },
+      methods: {
+        changeTitle: function(event){
+          this.title = event.target.value;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

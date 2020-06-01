@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- DevCorner - Favicon -->
+  <link rel="shortcut icon" href="img/favicon.svg"/>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico"/>
+
+  <!-- VueJS v2.05 -->
+  <script src="js/vue.js" charset="utf-8"></script>
+
+  <title>VueJs</title>
+</head>
+<body>
+
+  <div id="app">
+    <ul>
+      <li v-for="(ingredient, i) in ingredients" :key="ingredient">{{ ingredient }} ({{ i }})</li>
+    </ul>
+    <button @click="ingredients.push('spices')">Add New</button>
+    <hr>
+    <ul>
+      <li v-for="person in persons">
+        <div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</div>
+      </li>
+    </ul>
+    <span v-for="n in 10">{{ n }}</span>
+  </div>
+
+  <!-- CustomJS -->
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        ingredients: ['meat', 'fruit', 'cookies'],
+        persons: [
+          { name: 'Max', age: 27, color: 'red' },
+          { name: 'Anna', age: 'unknown', color: 'blue' }
+        ]
+      }
+    });
+  </script>
+</body>
+</html>

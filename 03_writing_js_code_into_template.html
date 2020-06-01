@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- DevCorner - Favicon -->
+  <link rel="shortcut icon" href="img/favicon.svg"/>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico"/>
+
+  <!-- VueJS v2.05 -->
+  <script src="js/vue.js" charset="utf-8"></script>
+
+  <title>VueJs</title>
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="increase(2, $event)">Click me</button>
+    <button v-on:click="counter++">Click me</button>
+    <p>{{ counter * 2 }}</p>
+    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove.stop="">DEAD SPOT</span></p>
+  </div>
+
+  <!-- CustomJS -->
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        counter: 0,
+        x: 0,
+        y: 0
+      },
+      methods: {
+        increase: function(step, event){
+          this.counter += step;
+        },
+        updateCoordinates: function(event){
+          this.x = event.clientX;
+          this.y = event.clientY;
+        },
+        alertMe: function(){
+          alert('Alert!');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
